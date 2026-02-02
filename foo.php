@@ -4,7 +4,7 @@ include_once 'db.php';
 
 $name = $_POST['name'];
 $email = $_POST['email'];
-$get_id = $_GET['id'];
+$id = (int)$_POST['id'];
 
 //Create
 $mysqli = new mysqli('localhost', 'root', '', 'crud');
@@ -25,4 +25,14 @@ $sql1 = "SELECT * FROM users";
 $mysql = mysqli_query($mysqli, $sql1);
 $result = mysqli_fetch_all($mysql, MYSQLI_ASSOC);
 
+//Update
 
+if (isset($_POST['edit'])) {
+
+    $sql = "UPDATE users SET name='$name', email='$email' WHERE id=$id";
+    $mysql = mysqli_query($mysqli, $sql);
+
+    if ($mysql) {
+        header('Location: index.php');
+    }
+}
