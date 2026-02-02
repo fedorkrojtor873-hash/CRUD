@@ -1,4 +1,7 @@
-<?php include 'foo.php'; ?>
+<?php
+global $result;
+include 'foo.php';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,11 +28,12 @@
                 <th>Action</th>
                 </thead>
                 <tbody>
-                <?php foreach ($result as $results) { ?>
+
+                <?php foreach ($result as $results) {;?>
                 <tr>
-                    <td><?php echo $results->id ?></td>
-                    <td><?php echo $results->name ?></td>
-                    <td><?php echo $results->email ?></td>
+                    <td><?php echo $results['id'] ?></td>
+                    <td><?php echo $results['name'] ?></td>
+                    <td><?php echo $results['email'] ?></td>
                     <td>
                         <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
                         <a href="" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>

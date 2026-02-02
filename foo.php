@@ -21,6 +21,8 @@ if(isset($_POST['add'])){;
 
 //Read
 
-$sql = "SELECT * FROM users";
-$result = $mysqli->query($sql);
+$sql1 = "SELECT * FROM users";
+$mysql = mysqli_query($mysqli, $sql1);
+$result = mysqli_fetch_all($mysql, MYSQLI_ASSOC);
+
 
