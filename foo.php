@@ -36,3 +36,14 @@ if (isset($_POST['edit'])) {
         header('Location: index.php');
     }
 }
+
+//Delete
+
+if(isset($_POST['delete'])){
+    $sql = "DELETE FROM users WHERE id=$id";
+    $mysql = mysqli_query($mysqli, $sql);
+
+    if ($mysql) {
+        header('Location: index.php');
+    }
+}
