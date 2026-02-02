@@ -1,3 +1,4 @@
+<?php include 'foo.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +15,8 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <button class="btn btn-success mt-2" data-toggle="modal" data-target="#create"><i class="fa fa-plus"></i></button>
+            <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#create"><i
+                        class="fa fa-plus"></i></button>
             <table class="table table-striped table-hover">
                 <thead class="th-dark">
                 <th>ID</th>
@@ -23,15 +25,17 @@
                 <th>Action</th>
                 </thead>
                 <tbody>
+                <?php foreach ($result as $results) { ?>
                 <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td><?php echo $results->id ?></td>
+                    <td><?php echo $results->name ?></td>
+                    <td><?php echo $results->email ?></td>
                     <td>
                         <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
                         <a href="" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
                     </td>
                 </tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>
@@ -47,8 +51,8 @@
             </div>
             <div class="modal-body">
                 <form action="" method="post">
+                    <small>Имя</small>
                     <div class="form-group">
-                        <small>Имя</small>
                         <label>
                             <input type="text" class="form-control" name="name">
                         </label>
@@ -61,7 +65,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                        <button type="button" class="btn btn-primary" name="add">Сохранить</button>
+                        <button type="submit" class="btn btn-primary" name="add">Сохранить</button>
                     </div>
                 </form>
             </div>
