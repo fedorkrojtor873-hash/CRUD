@@ -42,113 +42,15 @@ include 'foo.php';
                                data-bs-target="#delete<?php echo $results['id'] ?>"><i class="fa fa-trash-alt"></i></a>
                         </td>
                     </tr>
-                    <!-- Modal Edit -->
-                    <div class="modal fade" id="edit<?php echo $results['id']; ?>" tabindex="-1"
-                         aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Изменить запись</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="" method="post">
-                                        <input type="hidden" name="id" value="<?php echo $results['id']; ?>">
-                                        <small>Имя</small>
-                                        <div class="form-group">
-                                            <label>
-                                                <input type="text" class="form-control" name="name"
-                                                       value=' <?php echo $results['name'] ?>'>
-                                            </label>
-                                        </div>
-                                        <small>Email</small>
-                                        <div class="form-group">
-                                            <label>
-                                                <input type="text" class="form-control"
-                                                       name="email" value=' <?php echo $results['email'] ?> '>
-                                            </label>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                Закрыть
-                                            </button>
-                                            <button type="submit" class="btn btn-primary" name="edit">Изменить</button>
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal Edit -->
-                    <!-- Modal Delete -->
-                    <div class="modal fade" id="delete<?php echo $results['id']; ?>" tabindex="-1"
-                         aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Удалить запись
-                                        № <?php echo $results['id']; ?></h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="" method="post">
-                                        <input type="hidden" name="id" value="<?php echo $results['id']; ?>">
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                Закрыть
-                                            </button>
-                                            <button type="submit" class="btn btn-primary" name="delete">Удалить</button>
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal Delete -->
+                    <?php include 'frontend/edit.php'?>
+                    <?php include 'frontend/delete.php'?>
                 <?php } ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- Modal Create -->
-<div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Добавить запись</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    <small>Имя</small>
-                    <div class="form-group">
-                        <label>
-                            <input type="text" class="form-control" name="name">
-                        </label>
-                    </div>
-                    <small>Email</small>
-                    <div class="form-group">
-                        <label>
-                            <input type="text" class="form-control" name="email">
-                        </label>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                        <button type="submit" class="btn btn-primary" name="add">Сохранить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Create -->
+ <?php include 'frontend/create.php'?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
